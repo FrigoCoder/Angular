@@ -1,0 +1,47 @@
+
+
+....
+
+ng generate component another --flate --inline-template --inline-styles
+
+<ng-content> tag
+
+[first-app-app] attribute selector so <div first-app-app/> gets replaced
+
+ng generate component other 
+
+selector prefixes are highly recommended to avoid tag collisions with other libraries
+
+main.ts needs to know the available components
+or declare it in the directives section of @Component of FirstAppAppComponent
+
+barrels: folders with index.js so you can export and import multiple things at once
+
+----
+
+View encapsulation
+shadow dom
+
+----
+
+Databinding = communication
+
+Component body / logic passes data to component template (view), and listens to events coming from that
+
+Databinding methods:
+- String interpolation: {{Expression resolving to a string}}
+- Property binding: <button [disabled]="expression resolving to required value type">
+- Event binding: <button (click)="expression handling the event">
+- Two-way binding: <input [(ngModel)]="bound model (e.g. object)">
+
+Angular 2 does not have two-way binding by default. One way binding is much faster and safer.
+
+Property & Event Binding:
+- DOM properties: <img [src]="...">, <img (click)="...">
+- Directive properties: <div [ngClass]="...">, <div (ngSubmit)="...">
+- Component properties: <cmp [initObj]="...">, <cmp (rndEvent)="...">
+- Custom bindings:
+    - Property binding: @Input() propertyName: string;
+    - Event binding: @Output() eventName = new EventEmitter();
+
+<input type="text" [value]="stringInterpolation">

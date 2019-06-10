@@ -1,0 +1,80 @@
+
+# 01 - Getting Started
+
+Angular 2
+Framework for creating single page applications.
+
+Traditional web application
+Server, Client, User
+Request, Response
+For each different URL you need to execute a different request to server.
+Slow feeling of webpages.
+
+Single Page Application
+Client is responsible for rendering page
+Server is only used for initial loading an server-side operations.
+Faster experience.
+
+URL change, DOM / Mouse events
+handles incoming user "requests"/events
+Angular 2 Router parses the URL to route appropriately
+Directives and Components Databinding renders a "new" page by changing the parts of DOM which need to be updated (through JS)
+
+nodejs.org
+We need it for server features and Angular CLI.
+(sudo) npm install -g angular-cli -> yarn global add @angular/cli
+ng new first-app
+ng serve
+localhost:4200
+
+Visual Studio Code recommended for editing
+TypeScript not Javascript, has to be compiled to Javascript
+
+dist: compiled and finished code (older angular version I guess?)
+src: source code
+    index.html
+    app folder
+        app.component.css: style
+        app.component.html: html duh
+        app.component.ts: typescript
+        app.component.spec.ts: unit test
+        app.module.ts: ?
+        app-routing.module.ts: ?
+
+app.component.html
+
+{{title}}: string interpolation
+
+
+app.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'first-app';
+}
+
+This is generally how it works. You change something in the module that you output in HTML. Or if you have static content you can just write it directly in HTML.
+
+Folders:
+config: Mostly for testing. (older angular version I guess?)
+dist: compiled code
+e2e: end to end testing
+node_modules
+public: contents are copied into dist
+src: source code
+    index.html
+
+Yeah this is pointless, his Angular version was years behind, will look into folder structure of newer Angular versions.
+
+TypeScript:
+- Strong typing: compile-time errors, IDE support (autocomplete, errors)
+- Next gen JS features: classes, imports, exports
+- Missing JS fetaures: interfaces, generics
+
+Typescript can be installed independent of Angular 2.
